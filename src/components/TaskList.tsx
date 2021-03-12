@@ -34,7 +34,11 @@ export function TaskList() {
     // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
     const ArrayComplete = [...tasks]
     const result = ArrayComplete.findIndex( task => task.id == id )
-    ArrayComplete[result].isComplete = true
+    if(ArrayComplete[result].isComplete == true){
+      ArrayComplete[result].isComplete = false
+    }else{
+      ArrayComplete[result].isComplete = true
+    }
     setTasks(ArrayComplete)
   }
 
